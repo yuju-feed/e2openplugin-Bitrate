@@ -14,13 +14,13 @@ from Tools.Directories import pathExists, fileExists
 from .bitrate import Bitrate
 
 config.plugins.bitrate = ConfigSubsection()
-config.plugins.bitrate.background = ConfigSelection([("#00000000", _("black")), ("#54111112", _("transparent") + " - " + _("black"))], default="#00000000")
-config.plugins.bitrate.x = ConfigInteger(default=300, limits=(0, 9999))
-config.plugins.bitrate.y = ConfigInteger(default=300, limits=(0, 9999))
+config.plugins.bitrate.background = ConfigSelection([("#00000000", _("black")), ("#54111112", _("transparent") + " - " + _("black"))], default="transparent")
+config.plugins.bitrate.x = ConfigInteger(default=1600, limits=(0, 9999))
+config.plugins.bitrate.y = ConfigInteger(default=200, limits=(0, 9999))
 config.plugins.bitrate.force_restart = ConfigYesNo(default=True)
-config.plugins.bitrate.show_in_menu = ConfigSelection([("infobar", _("as infobar")), ("extmenu", _("extension menu"))], default="extmenu")
+config.plugins.bitrate.show_in_menu = ConfigSelection([("infobar", _("as infobar")), ("extmenu", _("extension menu"))], default="infobar")
 config.plugins.bitrate.infobar_type_services = ConfigSelection([("all", _("all")), ("dvb", _("only DVB"))], default="all")
-config.plugins.bitrate.style_skin = ConfigSelection([("compact", _("compact")), ("full", _("full info"))], default="full")
+config.plugins.bitrate.style_skin = ConfigSelection([("compact", _("compact")), ("full", _("full info"))], default="compact")
 config.plugins.bitrate.z = ConfigSelection([(str(x), str(x)) for x in range(-20, 21)], "1")
 
 infobarModeBitrateInstance = None
